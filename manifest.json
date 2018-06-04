@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Federico Miras",
   "browser_action": {
-    "default_icon": "assets/decentraland-icon.png",
+    "default_icon": "decentraland-icon.png",
     "default_title": "Change Marketplace currency"
   },
   "content_scripts": [
@@ -14,8 +14,11 @@
         "https://market.decentraland.org/*"
       ],
       "js": [
-        "dist/index.js"
+        "index.js"
       ]
     }
+  ],
+  "permissions": [
+    "https://api.coinmarketcap.com/v2/ticker/1966"
   ]
 }
