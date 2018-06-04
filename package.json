@@ -12,5 +12,13 @@
     "marketplace"
   ],
   "author": "fmiras",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "dotenv": "6.0.0",
+    "webpack": "4.10.2",
+    "webpack-cli": "3.0.1"
+  }
 }
