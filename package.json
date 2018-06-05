@@ -14,11 +14,11 @@
   "author": "fmiras",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack --watch"
   },
   "devDependencies": {
     "copy-webpack-plugin": "4.5.1",
-    "dotenv-webpack": "1.5.6",
     "webpack": "4.10.2",
     "webpack-cli": "3.0.1"
   }
