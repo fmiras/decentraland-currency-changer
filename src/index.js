@@ -7,12 +7,28 @@ const getManaPriceUsd = async mana => {
   return data.quotes.USD.price
 }
 
-(async () => {
+const hasManaPrice = mana => {
+  return mana.innerHTML.includes('svg')
+}
+
+const convertPrices = async () => {
   const manaPriceUsd = await getManaPriceUsd()
   const manas = [...document.getElementsByClassName('Mana')]
   manas.forEach(mana => {
+    if(!hasManaPrice(mana)){
+      return
+    }
     const manaAmount = mana.innerText.split(',').join('')
     const usdAmount = manaPriceUsd * manaAmount
     mana.innerText = `$${formatPrice(usdAmount)}`
   })
-})()
+}
+
+convertPrices()
+
+const loop = () => {
+  convertPrices()
+  setTimeout(loop, 1000)
+}
+
+loop()
