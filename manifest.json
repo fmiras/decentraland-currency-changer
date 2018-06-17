@@ -6,7 +6,8 @@
   "author": "Federico Miras",
   "browser_action": {
     "default_icon": "decentraland-icon.png",
-    "default_title": "Change Marketplace currency"
+    "default_title": "Change Marketplace currency",
+    "default_popup": "currencies.html"
   },
   "content_scripts": [
     {
