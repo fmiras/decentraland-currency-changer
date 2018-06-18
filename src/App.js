@@ -1,17 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
+import CurrencyDropdown from './components/CurrencyDropdown'
+
 import logo from './logo.svg'
 import './App.css'
 
-class App extends Component {
+class App extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = { currency: 'USD' }
+  }
+
+  handleChange(currency) {
+    chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+      chrome.tabs.sendMessage(tabs[0].id, { currency })
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p className="App-intro">Marketplace currency:</p>
+        <CurrencyDropdown onChange={this.handleChange} />
       </div>
     )
   }

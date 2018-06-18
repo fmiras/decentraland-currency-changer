@@ -1,8 +1,12 @@
 import { CurrencyLoader } from './modules/currency'
 
-window.loader = new CurrencyLoader()
+const loader = new CurrencyLoader()
+chrome.runtime.onMessage.addListener(message => {
+  loader.setCurrency(message.currency)
+})
+
 export const registerManaConversion = () => {
-  window.loader.reload()
+  loader.reload()
   setTimeout(registerManaConversion, 1000)
 }
 
