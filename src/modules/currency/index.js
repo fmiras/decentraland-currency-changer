@@ -1,3 +1,3 @@
-import CurrencyService from "./service";
+import CurrencyLoader from './loader'
 
-export { CurrencyService }
+export { CurrencyLoader }

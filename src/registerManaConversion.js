@@ -1,8 +1,10 @@
-import { CurrencyService } from "./modules/currency"
+import { CurrencyLoader } from './modules/currency'
 
+window.loader = new CurrencyLoader()
 export const registerManaConversion = () => {
-  CurrencyService.convertPrices();
-  setTimeout(registerManaConversion, 1000);
-};
+  window.loader.reload()
+  setTimeout(registerManaConversion, 1000)
+}
 
-console.log("DCL Marketplace currency changer extension loaded.")
+registerManaConversion()
+console.log('DCL Marketplace currency changer extension loaded.')
