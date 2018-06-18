@@ -16,7 +16,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV='production' node scripts/start.js",
-    "build": "react-scripts build",
+    "build": "NODE_ENV='production' node scripts/build.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

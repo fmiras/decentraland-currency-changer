@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["https://market.decentraland.org/*"],
-      "js": ["index.js"]
+      "js": ["register-mana-conversion.js"]
     }
   ],
   "permissions": ["https://api.coinmarketcap.com/v2/ticker/*"]
