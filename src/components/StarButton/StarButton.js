@@ -10,7 +10,7 @@ export default class StarButton extends React.PureComponent {
           src="https://ghbtns.com/github-btn.html?user=fmiras&repo=decentraland-currency-changer&type=star&count=true"
           frameborder="0"
           scrolling="0"
-          width="50px"
+          width="72px"
           height="30px"
         />
       </div>
