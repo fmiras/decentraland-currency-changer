@@ -27,13 +27,15 @@ export default class CurrencyDropdown extends React.PureComponent {
 
   render() {
     return (
-      <form>
-        <select value={this.state.value} onChange={this.handleChange}>
-          <option value="USD">USD</option>
-          <option value="MANA">MANA</option>
-          <option value="BTC">BTC</option>
-        </select>
-      </form>
+      <div className="CurrencyDropdown">
+        <form>
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="USD">USD</option>
+            <option value="MANA">MANA</option>
+            <option value="BTC">BTC</option>
+          </select>
+        </form>
+      </div>
     )
   }
 }

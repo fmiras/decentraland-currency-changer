@@ -1,5 +1,6 @@
 import React from 'react'
 import CurrencyDropdown from './components/CurrencyDropdown'
+import StarButton from './components/StarButton'
 
 import logo from './logo.svg'
 import './App.css'
@@ -24,6 +25,7 @@ class App extends React.PureComponent {
         </header>
         <p className="App-intro">Marketplace currency:</p>
         <CurrencyDropdown onChange={this.handleChange} />
+        <StarButton />
       </div>
     )
   }
