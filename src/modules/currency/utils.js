@@ -1,3 +1,5 @@
+/* global chrome */
+
 import { mana } from '../mana'
 
 export const COINMARKET_MANA = 'https://api.coinmarketcap.com/v2/ticker/1966'
@@ -57,4 +59,26 @@ export async function getManaPrice(currency) {
     default:
       return currency
   }
+}
+
+export function getCurrencyFromLocalstorage() {
+  // return new Promise(resolve => {
+  //   chrome.storage.sync.get('currency', currency => {
+  //     resolve(currency)
+  //   })
+  // })
+  return localStorage['currency']
+}
+
+export function setLocalStorageCurrency(currency) {
+  // chrome.storage.sync.set({ currency })
+  localStorage['currency'] = currency
+}
+
+export function isValid(currency) {
+  if (!currency) {
+    return false
+  }
+
+  return getAvailableCurrencies().some(c => c.label === currency)
 }

@@ -16,5 +16,5 @@
       "js": ["register-mana-conversion.js"]
     }
   ],
-  "permissions": ["https://api.coinmarketcap.com/v2/ticker/*"]
+  "permissions": ["storage", "https://api.coinmarketcap.com/v2/ticker/*"]
 }

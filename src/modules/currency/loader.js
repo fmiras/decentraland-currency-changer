@@ -1,7 +1,7 @@
-import { formatValue, getManaPrice, getDefaultCurrency } from './utils'
+import { formatValue, getManaPrice } from './utils'
 
 export default class CurrencyLoader {
-  constructor(currency = getDefaultCurrency().label) {
+  constructor(currency) {
     this.currency = currency
     this.virtualMana = []
   }

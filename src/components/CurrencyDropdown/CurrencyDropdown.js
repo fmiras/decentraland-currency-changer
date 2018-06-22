@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
   getAvailableCurrencies,
-  getDefaultCurrency
+  getDefaultCurrency,
+  getCurrencyFromLocalstorage,
+  setLocalStorageCurrency
 } from '../../modules/currency/utils'
 
 import './CurrencyDropdown.css'
@@ -12,12 +14,15 @@ export default class CurrencyDropdown extends React.PureComponent {
 
   constructor(props) {
     super(props)
-    this.state = { value: getDefaultCurrency().label }
+    this.state = {
+      value: getCurrencyFromLocalstorage() || getDefaultCurrency().label
+    }
   }
 
   handleChange = e => {
-    this.setState({ value: e.target.value })
-    this.props.onChange(e.target.value)
+    const { value } = e.target
+    this.setState({ value })
+    this.props.onChange(value)
   }
 
   render() {
