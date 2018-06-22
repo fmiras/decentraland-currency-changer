@@ -1,3 +1,5 @@
+/* global chrome */
+
 import React from 'react'
 import CurrencyDropdown from './components/CurrencyDropdown'
 import StarButton from './components/StarButton'
