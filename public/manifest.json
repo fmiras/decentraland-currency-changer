@@ -3,7 +3,7 @@
   "short_name": "DCL Marketplace",
   "name": "Decentraland Marketplace Currency Changer",
   "description": "Change the displaying currency on Decentraland's marketplace",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": "Federico Miras",
   "browser_action": {
     "default_icon": "decentraland-icon.png",
