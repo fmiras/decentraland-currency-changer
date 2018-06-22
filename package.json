@@ -1,6 +1,6 @@
 {
   "name": "decentraland-currency-changer",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Change the displaying currency on Decentraland's marketplace",
   "keywords": [
     "chrome-extension",
