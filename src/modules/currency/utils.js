@@ -26,19 +26,14 @@ export function formatValue(currency, value) {
 
 export function getAvailableCurrencies() {
   return [
-    {
-      label: 'USD',
-      description: 'US Dollar'
-    },
-    {
-      label: 'MANA',
-      description: 'Decentraland MANA'
-    },
-    {
-      label: 'BTC',
-      description: 'Bitcoin'
-    }
+    { label: 'BTC', description: 'Bitcoin', default: true },
+    { label: 'MANA', description: 'Decentraland MANA' },
+    { label: 'USD', description: 'US Dollar' }
   ]
+}
+
+export function getDefaultCurrency() {
+  return getAvailableCurrencies().find(currency => currency.default)
 }
 
 async function getPriceFromUrl(url) {

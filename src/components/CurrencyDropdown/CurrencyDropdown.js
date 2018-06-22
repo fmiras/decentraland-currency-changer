@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getAvailableCurrencies } from '../../modules/currency/utils'
+import {
+  getAvailableCurrencies,
+  getDefaultCurrency
+} from '../../modules/currency/utils'
 
 import './CurrencyDropdown.css'
 
@@ -9,7 +12,7 @@ export default class CurrencyDropdown extends React.PureComponent {
 
   constructor(props) {
     super(props)
-    this.state = { value: 'USD' }
+    this.state = { value: getDefaultCurrency().label }
   }
 
   handleChange = e => {
@@ -17,22 +20,14 @@ export default class CurrencyDropdown extends React.PureComponent {
     this.props.onChange(e.target.value)
   }
 
-  getOptions() {
-    return getAvailableCurrencies().map(currency => ({
-      text: currency.label,
-      value: currency.label,
-      description: currency.text
-    }))
-  }
-
   render() {
     return (
       <div className="CurrencyDropdown">
         <form>
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="USD">USD</option>
-            <option value="MANA">MANA</option>
-            <option value="BTC">BTC</option>
+            {getAvailableCurrencies().map(currency => (
+              <option value={currency.label}>{currency.description}</option>
+            ))}
           </select>
         </form>
       </div>
