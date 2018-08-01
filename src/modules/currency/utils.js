@@ -1,9 +1,9 @@
-/* global chrome */
-
+/* global localStorage */
 import { mana } from '../mana'
 
 export const COINMARKET_MANA = 'https://api.coinmarketcap.com/v2/ticker/1966'
 export const COINMARKET_BTC = 'https://api.coinmarketcap.com/v2/ticker/1'
+export const COINMARKET_ETH = 'https://api.coinmarketcap.com/v2/ticker/1027'
 
 function formatPrice(value, decimals = 2) {
   return value.toFixed(decimals).replace(/\d(?=(\d{3})+\.)/g, '$&,')
@@ -20,6 +20,9 @@ export function formatValue(currency, value) {
     case 'BTC': {
       return `฿${formatPrice(value)}`
     }
+    case 'ETH': {
+      return `Ξ${formatPrice(value)}`
+    }
     default: {
       return formatPrice(value)
     }
@@ -28,7 +31,8 @@ export function formatValue(currency, value) {
 
 export function getAvailableCurrencies() {
   return [
-    { label: 'BTC', description: 'Bitcoin', default: true },
+    { label: 'ETH', description: 'Ethereum', default: true },
+    { label: 'BTC', description: 'Bitcoin' },
     { label: 'MANA', description: 'Decentraland MANA' },
     { label: 'USD', description: 'US Dollar' }
   ]
@@ -56,12 +60,18 @@ export async function getManaPrice(currency) {
       const bitcoinUsdPrice = await getPriceFromUrl(COINMARKET_BTC)
       return manaUsdPrice / bitcoinUsdPrice
     }
+    case 'ETH': {
+      const manaUsdPrice = await getPriceFromUrl(COINMARKET_MANA)
+      const etherUsdPrice = await getPriceFromUrl(COINMARKET_ETH)
+      return manaUsdPrice / etherUsdPrice
+    }
     default:
       return currency
   }
 }
 
 export function getCurrencyFromLocalstorage() {
+  // TODO add chrome storage as feature
   // return new Promise(resolve => {
   //   chrome.storage.sync.get('currency', currency => {
   //     resolve(currency)
@@ -71,6 +81,7 @@ export function getCurrencyFromLocalstorage() {
 }
 
 export function setLocalStorageCurrency(currency) {
+  // TODO add chrome storage as feature
   // chrome.storage.sync.set({ currency })
   localStorage['currency'] = currency
 }

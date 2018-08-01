@@ -22,9 +22,10 @@ Open the [decentraland marketplace](https://market.decentraland.org), then click
 
 ### Available Currencies
 
-- USD / US Dollar
-- MANA / Decentraland MANA
+- ETH / Ethereum
 - BTC / Bitcoin
+- MANA / Decentraland MANA
+- USD / US Dollar
 
 ### Contributing
 
