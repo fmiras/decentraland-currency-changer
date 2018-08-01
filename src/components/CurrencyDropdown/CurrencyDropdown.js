@@ -30,7 +30,9 @@ export default class CurrencyDropdown extends React.PureComponent {
         <form>
           <select value={this.state.value} onChange={this.handleChange}>
             {getAvailableCurrencies().map(currency => (
-              <option value={currency.label}>{currency.description}</option>
+              <option key={currency.label} value={currency.label}>
+                {currency.description}
+              </option>
             ))}
           </select>
         </form>
