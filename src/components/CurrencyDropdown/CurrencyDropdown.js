@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import {
   getAvailableCurrencies,
   getDefaultCurrency,
-  getCurrencyFromLocalstorage,
-  setLocalStorageCurrency
+  getCurrencyFromLocalstorage
 } from '../../modules/currency/utils'
 
 import './CurrencyDropdown.css'
