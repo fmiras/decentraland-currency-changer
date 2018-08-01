@@ -1,3 +1,4 @@
+/* global localStorage */
 import { mana } from '../mana'
 
 export const COINMARKET_MANA = 'https://api.coinmarketcap.com/v2/ticker/1966'
@@ -80,6 +81,7 @@ export function getCurrencyFromLocalstorage() {
 }
 
 export function setLocalStorageCurrency(currency) {
+  // TODO add chrome storage as feature
   // chrome.storage.sync.set({ currency })
   localStorage['currency'] = currency
 }
