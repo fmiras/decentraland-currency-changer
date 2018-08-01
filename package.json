@@ -13,7 +13,7 @@
   ],
   "author": "fmiras",
   "license": "MIT",
-  "private": true,
+  "repository": "fmiras/decentraland-currency-changer",
   "scripts": {
     "start": "NODE_ENV='production' node scripts/start.js",
     "build": "NODE_ENV='production' node scripts/build.js",
