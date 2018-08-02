@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "prop-types": "15.6.2",
-    "react": "16.4.1",
-    "react-dom": "16.4.1"
+    "react": "16.4.2",
+    "react-dom": "16.4.2"
   },
   "devDependencies": {
     "cross-spawn": "6.0.5",
